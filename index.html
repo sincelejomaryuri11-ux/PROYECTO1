@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
+    <!-- Ajusta la página al ancho del dispositivo (responsivo) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Archivo CSS externo -->
     <link rel="stylesheet" href="estilo.css">
+    
     <title>Mar'ScBlog</title>
+    <!-- Descripción corta para SEO -->
     <meta name="description" content="Blog sobre tecnología, desarrollo web y las últimas tendencias del sector">
 </head>
+    
 <body>
+    <!-- CABECERA del sitio: contiene el logo, el título y el menú -->
     <header>
         <div class="container">
             <div class="header-content">
+                <!-- Título del blog -->
                 <h1>Mar'ScBlog</h1>
+                <!-- Imagen de perfil en formato circular -->
                 <img src="IMG/perfil.jpg" alt="perfil" class="img-circular">
+
+                <!-- Checkbox oculto para el menú hamburguesa (solo móvil) -->
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                <label for="menu-toggle" class="menu-icon">☰</label>
+
+                <!-- Menú de navegación -->
                 <nav>
                     <ul>  
                         <li><a href="#inicio">Inicio</a></li>
@@ -20,6 +35,7 @@
                         <li><a href="#diseño">Diseño</a></li>
                         <li><a href="#sobre-nosotros">Sobre Mí</a></li>
                         <li><a href="#contacto">Contacto</a></li>
+                        <!-- Opción para descargar un archivo PDF -->
                         <li><a href="Doc/hoja-de-vida.pdf" download="">Descargar</a></li>
                     </ul>
                 </nav>
@@ -27,32 +43,41 @@
         </div>
     </header>
 
+    <!-- CONTENIDO PRINCIPAL -->
     <div class="container">
         <main>
+            <!-- Sección de artículos del blog -->
             <section id="posts">
+                <!-- Primer artículo -->
                 <article id="inicio">
                     <div class="inicio">
                         <h2><a href="#post1">Los Frameworks CSS más Populares en 2024</a></h2>
+                        <!-- Metadatos del artículo -->
                         <div class="article-meta">
                             Por <strong>Maria García</strong> | 
                             <time datetime="2024-01-10">10 de Enero, 2024</time> | 
                             <a href="#categoria-css">CSS</a>
                         </div>
                     </div>
+                    <!-- Imagen del artículo -->
                     <img src="IMG/csss.png" alt="Logos de frameworks CSS">
+                    <!-- Contenido del artículo -->
                     <div style="padding: 20px;">
                         <p>En este artículo exploramos los frameworks CSS más utilizados en 2024, incluyendo Bootstrap, Tailwind CSS, y las nuevas alternativas que están ganando popularidad entre los desarrolladores.</p>
                         <p>Los frameworks CSS han revolucionado la forma en que desarrollamos interfaces web, permitiendo crear diseños responsivos y modernos de manera más eficiente...</p>
+                        <!-- Etiquetas -->
                         <div class="tags">
                             <span class="tag">CSS</span>
                             <span class="tag">Frameworks</span>
                             <span class="tag">Bootstrap</span>
                             <span class="tag">Tailwind</span>
                         </div>
+                        <!-- Enlace para leer más -->
                         <a href="#leer-mas">Leer más →</a>
                     </div>
                 </article>
-
+                
+                <!-- Segundo artículo -->
                 <article id="desarrollo">
                     <div class="desa">
                         <h2><a href="#post2">JavaScript ES2024: Nuevas Características</a></h2>
@@ -75,6 +100,7 @@
                     </div>
                 </article>
 
+                <!-- Tercer artículo -->
                 <article id="diseño">
                     <div class="diseño">
                         <h2><a href="#post3">Diseño Web Responsivo: Mejores Prácticas</a></h2>
@@ -99,7 +125,9 @@
                 </article>
             </section>
 
+            <!-- BARRA LATERAL (aside) -->
             <aside>
+                <!-- Buscador -->
                 <section>
                     <h3>Buscar</h3>
                     <form class="search-form">
@@ -107,7 +135,8 @@
                         <button type="submit" style="width: 100%; padding: 8px; margin-top: 5px;">Buscar</button>
                     </form>    
                 </section>
-
+                
+                <!-- Información sobre el autor -->
                 <section id="sobre-nosotros">
                     <h3>Sobre mí</h3>
                     <p>Hola, soy la creadora de Mar'ScBlog. Me apasiona la tecnología, 
@@ -116,6 +145,7 @@
                     quienes también disfrutan de este mundo digital.</p>
                 </section>
 
+                <!-- Categorías del blog -->
                 <section>
                     <h3>Categorías</h3>
                     <ul style="list-style: none;">
@@ -127,6 +157,7 @@
                     </ul>
                 </section>
 
+                <!-- Lista de artículos populares -->
                 <section>
                     <h3>Artículos Populares</h3>
                     <ul style="list-style: none;">
@@ -136,6 +167,7 @@
                     </ul>
                 </section>
 
+                <!-- Formulario de newsletter -->
                 <section>
                     <h3>Newsletter</h3>
                     <p>Suscríbete para recibir los últimos artículos:</p>
@@ -145,6 +177,7 @@
                     </form>
                 </section>
 
+                <!-- Redes sociales -->
                 <section>
                     <h3>Síguenos</h3>
                     <ul style="list-style: none;">
@@ -158,6 +191,7 @@
         </main>
     </div>
 
+<!-- PIE DE PÁGINA -->
 <footer id="contacto">
   <div class="container">
     <p>&copy; 2025 Mar'ScBlog. Todos los derechos reservados.</p>

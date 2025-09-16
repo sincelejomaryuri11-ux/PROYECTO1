@@ -40,7 +40,7 @@ header {
   height: 5rem;       
   border-radius: 50%;     /* lo hace circular */
   object-fit: cover;      /* mantiene proporción de la imagen */
-  border: 0.2rem solid #333; 
+  border: 0.2rem solid #60018b; 
 }
 
 /* NAVEGACIÓN en escritorio */

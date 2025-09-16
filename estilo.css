@@ -1,128 +1,154 @@
  
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+* { margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  }
 
-.container {
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 0 20px;
+/* Estilos globales del documento */
+body { font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
 }
 
+/* Contenedor central que limita el ancho en pantallas grandes 
+y mantiene márgenes automáticos (centrado) */
+.container {
+   max-width: 75rem;  /* 1200px: mejore se usa rem para ser flexible */
+   margin: 0 auto;
+   padding: 0 1.25rem;  /* 20px de espacio lateral */
+}
+
+/* HEADER: cabecera fija en la parte superior */
 header {   
     background: #BD93D3; 
     color: white; 
     padding: 1rem 0; ; 
-    position: sticky;
-    z-index: 1000;
-    top: 0;
+    position: sticky;  /* el header queda fijo al hacer scroll */
+    z-index: 1000;     /* asegura que esté por encima del resto */
+    top: 0;            /* pegado al borde superior */
 }
 
 .header-content {
-   display: flex;
-   justify-content: space-between; 
-   align-items: center; 
+  display: flex;                     /* distribuye logo + menú en línea */
+  justify-content: space-between;    /* espacio entre logo y nav */
+  align-items: center;               /* alinea verticalmente */
+  flex-wrap: wrap;                   /* permite que se acomoden en móvil */ 
 }
 
+/* foto circular dentro del header */
 .img-circular {
-  width: 80px;        
-  height: 80px;       
-  border-radius: 50%;  
-  object-fit: cover;  
-  border: 3px solid #333; 
+  width: 5rem;        
+  height: 5rem;       
+  border-radius: 50%;     /* lo hace circular */
+  object-fit: cover;      /* mantiene proporción de la imagen */
+  border: 0.2rem solid #333; 
 }
 
-article img {
-  width: 100%;       
-  height: auto;      /* ajusta la altura automáticamente */
-  display: block;    
-}
-        
+/* NAVEGACIÓN en escritorio */
 nav ul { 
-  display: flex; 
-  list-style: none; 
+  display: flex;    /* menú horizontal */
+  list-style: none; /* elimina viñetas */ 
 }
 
         
 nav li {
-   margin-left: 20px; 
+   margin-left: 1.25rem; /* separa los enlaces */
 }
         
 nav a {
-   color: white; text-decoration: none; 
-}
-  
-.inicio{
-   background: #BD93D3; 
-   color: white; 
-   padding: 1rem 0; ; 
+   color: white;
+   text-decoration: none; 
+   font-size: 1rem;
 }
 
-.desa{
-   background: #BD93D3; 
-   color: white; 
-   padding: 1rem 0; ; 
+/* El "truco" del menú hamburguesa:
+usamos un checkbox oculto que al estar "checked" muestra el menú */
+.menu-checkbox {
+  display: none;
 }
 
-.diseño{
-   background: #BD93D3; 
-   color: white; 
-   padding: 1rem 0; ; 
+/* menú hamburguesa, oculto en escritorio */
+.menu-icon {
+  display: none; /* solo aparece en móvil con media query */
+  font-size: 1.75rem;
+  cursor: pointer;
+  color: white;
 }
+
+/* ARTÍCULOS (cada bloque de contenido) */
+article {
+  background: white;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.1); /* sombra ligera */
+}
+
+article img {
+  width: 100%;       /* imágenes fluidas */
+  height: auto;      /* ajusta la altura automáticamente */
+  display: block;    
+}
+
+/* Bloques con títulos de secciones */
+.inicio,
+.desa,
+.diseño {
+  background: #BD93D3;
+  color: white;
+  padding: 1rem 0;
+}
+
+/* LAYOUT GENERAL con grid */
 main {
    display: grid;
-   grid-template-columns: 2fr 1fr;
-   gap: 30px;
-   margin: 30px 0;
-}
-        
-article { 
-  background: white;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+   grid-template-columns: 2fr 1fr; /* 2 partes para artículos, 1 parte para aside */
+   gap: 2rem;
+   margin: 2rem 0;
 }
 
+/* Ajuste para que los links de menú no queden "tapados" por el header */
 #inicio,
 #desarrollo,
 #diseño,
 #sobre-nosotros,
 #contacto {
-  scroll-margin-top: 120px; 
+  scroll-margin-top: 7.5rem; /* deja espacio cuando haces scroll a un id */
 }
 
-
-        
+/* Metadatos en los artículos (autor, fecha, etc.) */        
 .article-meta {
    color: #666;
-   font-size: 0.9em; 
-   margin: 10px 0; 
+   font-size: 0.9rem; 
+   margin: 0.625rem 0; 
 }
         
+/* ASIDE: la barra lateral */
 aside {
-   background:
-   #f8f9fa;
-   padding: 20px;
+  background: #f8f9fa;
+  padding: 1.25rem;
 }
-        
+
+/* FOOTER: pie de página */
 footer {
-  background: #BD93D3; color: rgb(12, 12, 12);
-  text-align: center; padding: 20px 0; 
-  color: #60018b;
+  background: #BD93D3;
+  text-align: center;
+  padding: 1.25rem 0;
+  color: #60018b; /* texto en violeta oscuro */
 }
         
-.search-form {
-   margin: 20px 0;
-}
-        
+/* TAGS: etiquetas de artículos */
 .tags {
-   margin: 10px 0; 
+  margin: 0.625rem 0;
 }
         
 .tag {
-   background: #B660CD; color: white; 
-   padding: 3px 8px; 
-   margin: 2px; font-size: 0.8em; 
+  background: #B660CD;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  margin: 0.2rem;
+  font-size: 0.8rem;
+  border-radius: 0.25rem;
 }
 
+/* LINKS en general */
 a {
     color: #60018b;          
     text-decoration: none;  
@@ -132,4 +158,65 @@ a:hover {
     color: rgb(122, 86, 151);        
 }
 
+/* FORMULARIOS */
+.search-form {
+  margin: 1.25rem 0;
+}
 
+/* RESPONSIVE: se aplicaa en pantallas de máximo 768px */
+@media (max-width: 768px) {
+  /* Ícono hamburguesa visible en móviles */
+  .menu-icon {
+    display: block;
+    z-index: 1100;
+  }
+
+   /* Menú oculto inicialmente en móviles */
+  nav ul {
+    display: flex;
+    flex-direction: column;   /* pasa de horizontal → vertical */
+    align-items: flex-start;  /* alineado a la izquierda */
+    gap: 1rem;
+
+    position: fixed;
+    top: 4.5rem;       /* justo debajo del header */
+    right: -100%;      /* fuera de pantalla */
+    width: 55%;
+    max-width: 14rem;  /* límite del ancho */
+    padding: 1.25rem;
+
+    background: rgba(197, 146, 219, 0.95); /* morado suave y translúcido */
+    border-radius: 0.75rem 0 0 0.75rem;    /* bordes redondeados */
+    box-shadow: -2px 2px 10px rgba(0,0,0,0.15);
+
+    transition: right 0.3s ease; /* animación de entrada */
+    z-index: 1000;
+  }
+
+   nav ul li a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  /* Cuando el checkbox está activado → menú aparece */
+  .menu-checkbox:checked ~ nav ul {
+    right: 0;
+  }
+
+  /* Layout pasa de dos columnas a una sola columna */
+  main {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+   /* aside baja debajo de los artículos */
+  aside {
+    order: 2;
+  }
+
+  article {
+    order: 1;
+  }
+}
+ 

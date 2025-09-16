@@ -66,13 +66,15 @@ usamos un checkbox oculto que al estar "checked" muestra el menú */
   display: none;
 }
 
-/* menú hamburguesa, oculto en escritorio */
+/* Ícono hamburguesa (solo visible en móvil) */
 .menu-icon {
-  display: none; /* solo aparece en móvil con media query */
+  display: none; /* se activa en media query */
   font-size: 1.75rem;
   cursor: pointer;
   color: white;
+  user-select: none; 
 }
+
 
 /* ARTÍCULOS (cada bloque de contenido) */
 article {
